@@ -1,0 +1,115 @@
+:root {
+  --bubble-background-color: #eee;
+  --bubble-color: #000;
+  --background-color: #00a000;
+}
+
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+.bubble {
+  width: 100%;
+  color: var(--bubble-color);
+}
+
+.bubble-content {
+  background-color: var(--background-color);
+  border-radius: 30px;
+  padding: 12px 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: inline-block;
+  max-width: 600px;
+}
+
+.bubble-content {
+  margin-right: 25%;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.bubble:last-child .bubble-content:before,
+.bubble:nth-last-child(2) .bubble-content:before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -12px;
+  height: 26px;
+  width: 30px;
+  background: inherit;
+  border-bottom-right-radius: 20px;
+}
+
+.bubble:last-child .bubble-content:after,
+.bubble:nth-last-child(2) .bubble-content:after {
+  background: #00a000 !important;
+  border-bottom-right-radius: 15px;
+  bottom: 0;
+  content: '';
+  height: 27px;
+  left: -15px;
+  position: absolute;
+  width: 15px;
+  z-index: 1;
+}
+.bubble.input,
+.bubble.input .bubble-content {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+  border: none;
+  outline: none;
+}
+
+.bubble.input.submitted {
+  transition: none;
+}
+
+.bubble.input.empty {
+  opacity: 0;
+}
+
+.bubble.input > div {
+  background-color: var(--bubble-background-color);
+  font-size: 32px;
+  min-width: 30px;
+}
+.chat {
+  padding-left: 86px;
+  padding-bottom: 200px;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+
+  font-size: 32px;
+  position: relative;
+}
+.App {
+  background-color: #00a000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: -99;
+  flex-direction: column-reverse;
+}
+
+.picker {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+}
