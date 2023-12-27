@@ -1,3 +1,4 @@
+import React from 'react'
 import { motion, usePresence } from 'framer-motion'
 
 const transition = {

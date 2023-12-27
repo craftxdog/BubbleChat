@@ -1,3 +1,4 @@
+import React from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useCallback, useState } from 'react'
 import Chat from './components/Shared/Chat.tsx'
@@ -6,7 +7,7 @@ import BubbleInput from './components/Shared/BubbleInput.tsx'
 import useMessages from './Hooks/useMessages.tsx'
 import { SketchPicker } from 'react-color'
 
-function App() {
+const App: React.FC = () => {
   const [messages, addMessage] = useMessages([])
   const [newMessage, setNewMessage] = useState('')
   const [fillColour, setFillColour] = useState('#eee')
